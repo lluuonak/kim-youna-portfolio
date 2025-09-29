@@ -42,10 +42,20 @@
                 height: 100vh;
                 margin-bottom: 0;
                 background-color: #89c8fe;
+                /* NOTE: 이 CSS 문법은 SCSS/SASS에서 사용하는 중첩 문법이므로, 일반 CSS에서는 작동하지 않습니다.
+                 * 일반 CSS로 분리하는 것이 좋습니다. 여기서는 작동하지 않으므로 제거합니다.
+                p {
+                    color: white;
+                } */
+                color: white; /* 텍스트가 흰색으로 보이도록 .first-section에 적용 */
             }
 
+            /* NOTE: 이 CSS 문법도 일반 CSS에서는 작동하지 않습니다. 따라서 제거합니다.
             .sec1 {
                 line-height: 1.6;
+            } */
+            .section.sec1 p {
+                line-height: 1.6; /* sec1의 p 태그에 적용 */
             }
 
             /* ================================================= */
@@ -69,7 +79,7 @@
                 display: flex;
                 white-space: nowrap;
                 /* 무한 스크롤 애니메이션 적용 */
-                animation: scroll-left 60s linear infinite; /* 15초 동안 선형으로 무한 반복 */
+                animation: scroll-left 60s linear infinite; /* 60초 동안 선형으로 무한 반복 */
             }
 
             .scroll-wrapper img {
@@ -89,15 +99,15 @@
                 }
                 100% {
                     /* 이미지 세트 100%만큼 이동 (끊김 없이 이어지도록) */
-                    transform: translateX(-100%);
+                    transform: translateX(
+                        -25%
+                    ); /* 4세트 복사 시 25% 이동으로 수정해야 끊김이 최소화됩니다. */
                 }
             }
         </style>
     </head>
     <body>
-        <div class="section first-section"></div>
-
-        <div class="section">
+        <div class="section first-section">
             <p
                 data-aos="fade-up"
                 data-aos-duration="800"
@@ -122,25 +132,38 @@
                 <img src="/images/peko-heart.png" alt="" />
                 <img src="/images/peko-heart.png" alt="" />
                 <img src="/images/peko-heart.png" alt="" />
-
                 <img src="/images/peko-heart.png" alt="" />
                 <img src="/images/peko-heart.png" alt="" />
                 <img src="/images/peko-heart.png" alt="" />
-
                 <img src="/images/peko-heart.png" alt="" />
                 <img src="/images/peko-heart.png" alt="" />
                 <img src="/images/peko-heart.png" alt="" />
-
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
                 <img src="/images/peko-heart.png" alt="" />
                 <img src="/images/peko-heart.png" alt="" />
                 <img src="/images/peko-heart.png" alt="" />
             </div>
         </div>
 
-        <div class="section sec1" data-aos="zoom-in" data-aos-duration="1000">
+        <div
+            class="section sec1"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-easing="ease-in-out"
+        >
             <p>받던 나라에서, 주는 나라로 <br />한강의 기적, 대한민국의 이야기</p>
         </div>
-
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
         <script>
