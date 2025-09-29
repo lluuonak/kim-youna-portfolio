@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>AOS fade-up 강조 예시</title>
+        <title>AOS + CSS 무한 스크롤 예시</title>
 
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
@@ -15,63 +15,132 @@
                 background-color: #f4f4f4;
             }
 
+            /* 기존 섹션 스타일 (유지) */
             .section {
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                height: 60vh; /* 섹션 높이를 조금 낮춰 스크롤을 유도 */
-                margin-bottom: 40vh; /* 간격을 넓혀 스크롤 여유 확보 */
+                height: 60vh;
+                margin-bottom: 40vh;
                 background-color: white;
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 그림자를 더 진하게 */
-                font-size: 2em; /* 폰트 크기 확대 */
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                font-size: 2em;
                 font-weight: bold;
                 text-align: center;
-                opacity: 1; /* AOS가 동작하지 않을 때 기본적으로 보이지만, AOS가 처리함 */
-                transition: all 0.2s; /* 부드러운 전환 효과 추가 */
+                transition: all 0.2s;
+            }
+            .section img {
+                /* vw 단위로 변경하여 반응형 대응 */
+                width: 50vw; /* (예시) 모바일 너비의 50% */
+                max-width: 300px;
+                height: auto;
+                margin-top: 20px;
             }
 
             .first-section {
                 height: 100vh;
                 margin-bottom: 0;
-                background-color: #e0f7fa;
+                background-color: #89c8fe;
+            }
+
+            /* ================================================= */
+            /* 🚀 무한 스크롤 관련 스타일 */
+            /* ================================================= */
+
+            .section-img {
+                /* height를 지정하여 섹션 높이 확보 (vh 사용) */
+                height: 30vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; /* 전체 너비 사용 */
+                overflow: hidden; /* 영역 밖으로 나가는 요소 숨기기 */
+                margin-bottom: 40vh;
+                background-color: #f0f0f0; /* 구분을 위한 배경색 */
+            }
+
+            /* 이미지들을 줄바꿈 없이 한 줄로 표시 */
+            .scroll-wrapper {
+                display: flex;
+                white-space: nowrap;
+                /* 무한 스크롤 애니메이션 적용 */
+                animation: scroll-left 40s linear infinite; /* 15초 동안 선형으로 무한 반복 */
+            }
+
+            .scroll-wrapper img {
+                /* 이미지 간격 및 크기 설정 */
+                width: 25vw; /* (예시) 이미지 하나당 뷰포트 너비의 25% */
+                max-width: 150px;
+                height: auto;
+                margin: 0 10px; /* 좌우 간격 */
+                /* AOS가 이미지에 개별 적용되도록 하기 위해 opacity를 1로 설정 */
+                opacity: 1;
+            }
+
+            /* 이미지를 왼쪽으로 무한 이동시키는 키프레임 애니메이션 */
+            @keyframes scroll-left {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    /* 이미지 세트 100%만큼 이동 (끊김 없이 이어지도록) */
+                    transform: translateX(-100%);
+                }
             }
         </style>
     </head>
     <body>
-        <div class="section first-section">
-            <p>화면을 아래로 스크롤하여<br />강조된 "Fade Up" 효과를 확인해보세요. 👇</p>
+        <div class="section first-section"></div>
+
+        <div class="section">
+            <p
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-offset="300"
+                data-aos-easing="ease-out-quad"
+            >
+                평화요정 피코를 소개합니다
+            </p>
+            <img
+                src="/images/peko-image.png"
+                alt="피코"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="200"
+                data-aos-offset="300"
+                data-aos-easing="ease-out-quad"
+            />
         </div>
 
-        <div
-            class="section"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-            data-aos-offset="300"
-            data-aos-easing="ease-out-quad"
-        >
-            <p>1. 강조된 Fade Up (2초 동안 천천히 올라옴)</p>
-            <img src="/images/peko-image.png" alt="피코" />
-        </div>
+        <div class="section-img" data-aos="fade-up" data-aos-duration="1000">
+            <div class="scroll-wrapper">
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
 
-        <div
-            class="section"
-            data-aos="fade-up"
-            data-aos-duration="2500"
-            data-aos-offset="400"
-            data-aos-delay="300"
-        >
-            <p>2. 더 느리고 (2.5초) 약간의 지연이 있는 Fade Up</p>
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+                <img src="/images/peko-heart.png" alt="" />
+            </div>
         </div>
 
         <div class="section" data-aos="zoom-in" data-aos-duration="1000">
-            <p>3. 일반적인 Zoom In (1초)</p>
+            <p>받던 나라에서, 주는 나라로 한강의 기적, 대한민국의 이야기</p>
         </div>
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
         <script>
             AOS.init({
-                // 전역 옵션 설정: 한 번만 애니메이션 재생하도록 설정 (선택 사항)
                 once: true,
             });
         </script>
