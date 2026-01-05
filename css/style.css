@@ -5,6 +5,7 @@ body {
 
 }
 
+/* 헤더 */
 #header {
     display: flex;
     justify-content: space-between;
@@ -26,7 +27,63 @@ body {
 }
 
 
-.profile-img { 
-    width: 20vw;
+
+/* 랜딩페이지 */
+#mainVisual {
+}
+#mainVisual {}
+
+
+/* 컨텐츠 */
+#container {
+    
+}
+#container .con {}
+#container .con .inner {
+    padding: 0 2rem;
+    box-sizing: border-box;
+
+}
+#container .con1 {
+    position: relative;
+}
+#container .con1 .inner {
+}
+#container .con1 .line {
+    position: absolute;
+    top: 0;
+    z-index: -10;   
+    transform: scale(1.8);
+}
+#container .con1 .inner .profile-img {
+    width: 30rem;
     display: block;
+}
+
+
+#container .con2 {
+    background-color: royalblue;
+}
+#container .con3 {
+    background-color: paleturquoise;
+}
+#container .con4 {
+    background-color: salmon;
+}
+#container .con5 {
+    background-color: goldenrod;
+}
+#container .con6 {
+    background-color: khaki;
+}
+
+
+
+
+
+@media (min-width: 1024px) {
+    #container {
+        padding: 0 32rem; 
+        box-sizing: border-box;
+    }
 }
