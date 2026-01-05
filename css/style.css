@@ -5,10 +5,28 @@ body {
 
 }
 
-
-img { 
-    width: 400px;
-    display: block;
-    margin-left: 50px;
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; 
+    margin: 0 auto;    
+    padding: 2rem 2rem;   
+    box-sizing: border-box;
+    width: 100%;
+}
+#header #logo {
+}
+#header #logo p {
+    color: #000;
+    font-size: 4rem;
+}
+#header #logo p span {
+    color: #8b8b8b;
 }
 
+
+.profile-img { 
+    width: 20vw;
+    display: block;
+}
