@@ -18,11 +18,15 @@ body {
 }
 #header #logo {
 }
-#header #logo p {
+#header #logo a {
+    text-decoration: none;
+    color: inherit;
+}
+#header #logo a p {
     color: #000;
     font-size: 4rem;
 }
-#header #logo p span {
+#header #logo a p span {
     color: #8b8b8b;
 }
 
@@ -30,6 +34,7 @@ body {
 
 /* 랜딩페이지 */
 #mainVisual {
+    background-color: #000;
 }
 #mainVisual {}
 
@@ -87,3 +92,4 @@ body {
         box-sizing: border-box;
     }
 }
+

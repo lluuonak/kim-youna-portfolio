@@ -7,20 +7,83 @@
     <title>Kim Youna Portfolio</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/menu-btn.css" />
+    <link rel="stylesheet" href="css/media.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.19/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
   </head>
   <body>
     <header id="header">
-      <div id="logo">
-        <p><span>Kim</span>Youna</p>
-      </div>
-      <nav>
+      <!-- <nav>
         <div id="menu-btn">
           <span class="icon"></span>
           <span class="text">MENU</span>
+        </div>
+      </nav> -->
+      <nav>
+        <div class="menu-bar">
+          <div id="menu-logo">
+            <a href="#"
+              ><p><span>Kim</span>Youna</p></a
+            >
+          </div>
+          <div class="menu-toggle-btn">
+            <div class="menu-toggle-label"><p>Menu</p></div>
+            <div class="menu-hamburger-icon">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-overlay">
+          <div class="menu-overlay-content">
+            <div class="menu-media-wrapper">
+              <img src="assets/images/menu-media.jpg" alt="" />
+            </div>
+            <div class="menu-content-wrapper">
+              <div class="menu-content-main">
+                <div class="menu-col">
+                  <div class="menu-link">
+                    <a href="#" data-section="profile">Profile</a>
+                  </div>
+                  <div class="menu-link">
+                    <a href="#" data-section="process">Process</a>
+                  </div>
+                  <div class="menu-link">
+                    <a href="#" data-section="project">Project</a>
+                  </div>
+                  <div class="menu-link">
+                    <a href="#" data-section="skills">Skills</a>
+                  </div>
+                  <div class="menu-link">
+                    <a href="#" data-section="about-me">About me</a>
+                  </div>
+                  <div class="menu-link">
+                    <a href="#" data-section="contact">Contact</a>
+                  </div>
+                </div>
+
+                <div class="menu-col">
+                  <div class="menu-tag"><a href="#">UX/UI Design</a></div>
+                  <div class="menu-tag"><a href="#">Frontend Works</a></div>
+                  <div class="menu-tag"><a href="#">Creative Project</a></div>
+                </div>
+              </div>
+              <div class="menu-footer">
+                <div class="menu-col">
+                  <p>Kim Youna Portfolio</p>
+                </div>
+                <div class="menu-col">
+                  <p>010-0000-0000</p>
+                  <p>hello@example.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -30,6 +93,8 @@
     <!-- 글씨는 clamp로 사이즈 정하기! -->
 
     <main id="container">
+      <div class="headerText">YNDS</div>
+      <div class="p">Why Not Design Studio</div>
       <div class="con con1 profile">
         <svg
           width="270"
@@ -316,7 +381,9 @@
       </div>
     </main>
     <footer id="footer">
-      <div class="inner"></div>
+      <div class="inner">
+        <p>© Kim Youna. All rights reserved.</p>
+      </div>
     </footer>
     <p class="top">
       <a href="#"><img src="images/top.png" alt="" /></a>
